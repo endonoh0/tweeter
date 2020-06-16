@@ -1,0 +1,18 @@
+#nav-bar {
+    height: 120px;
+    width: 100%;
+    padding: 1.5em;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    color: #FFFFFF;
+    background-color: #4056A1;
+    border: 5px solid yellow;
+    font-family: "Bungie";
+}
+
+#nav-bar .brand {
+    font-size: 2em;
+    font-weight: 400px;
+    padding: 0 0 1em 1em;
+}
