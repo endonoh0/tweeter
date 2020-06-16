@@ -1,6 +1,7 @@
 #nav-bar {
-    /* top: 0; */
-    /* position: fixed; */
+    top: 0;
+    position: fixed;
+    width: 1000px;
     height: 92px;
     padding: 1.5em;
     color: #FFFFFF;

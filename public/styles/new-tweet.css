@@ -29,9 +29,11 @@
 .btn {
     padding: 0 10px 0 10px;
     color: #fff;
+    background-color: #545149;
     border-radius: 0.5em;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
+
 .submit {
     background-color: #4299e1;
 }

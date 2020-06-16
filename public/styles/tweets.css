@@ -4,19 +4,31 @@
     border: solid 2px black;
     margin-bottom: 2em;
     margin-top: 0.5em;
+    opacity: 1;
 }
 
-.tweet h5 {
+.tweet h4 {
     margin-top: 1em;
+    opacity: 0;
 }
+
 
 .tweet img {
     border-radius: 2.5em;
     margin-right: 0.5em;
+    margin-bottom: 10px;
 }
 
 .tweet p {
     height: 42px;
     padding: 5px;
     margin: 0;
+}
+
+.tweet:hover h4 {
+  opacity: 1;
+}
+
+.tweet:hover {
+  box-shadow: 5px 5px 0px 0px rgba(163, 145, 145, 0.8);
 }
