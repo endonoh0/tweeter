@@ -30,7 +30,7 @@
             <img src="/images/logo.svg" alt="logo">
         </div>
 
-      <button>Write a new tweet</button>
+      <button>New tweet</button>
     </nav>
 
     <header>
@@ -49,11 +49,11 @@
     <main>
         <section class="new-tweet">
             <form method="POST" action="/tweets">
-                <!-- <label for="tweet-text">What are you humming about?</label> -->
                 <textarea
                     name="text"
                     id="tweet-text"
-                    placeholder="What's up, dawg?"
+                    class="message-box"
+                    placeholder="What are you chirping about?"
                     required
                     autofocus
                 ></textarea>
@@ -67,5 +67,8 @@
             </form>
         </section>
     </main>
+
+    <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="scripts/scroll-height.js"></script>
   </body>
 </html>
