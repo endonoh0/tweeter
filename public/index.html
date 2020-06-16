@@ -3,70 +3,94 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Tweeter</title>
 
     <!-- Scripts -->
     <script type="text/javascript" src="scripts/client.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
-
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link rel="stylesheet" href="styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="styles/header.css" type="text/css" />
     <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="styles/tweets.css" type="text/css" />
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-        <div>
-            <span class="brand">Tweeter</span>
-            <img src="/images/logo.svg" alt="logo">
-        </div>
+      <div id="wrapper">
+          <!-- Top nav bar (fixed) -->
+          <nav id="nav-bar" class="flexbox space-between bg-main w-full">
+              <div>
+                  <span class="brand">Tweeter</span>
+                  <img src="/images/logo.svg" alt="logo">
+              </div>
 
-      <button>New tweet</button>
-    </nav>
+            <button>New tweet</button>
+          </nav>
+          <!-- Profile -->
+          <header>
+              <div id="header" class="flexbox column center bg-main w-full">
+                  <div>
+                      <img src="/images/profile-hex.png">
+                  </div>
+                  <div>
+                      <h2>Your Name</h2>
+                  </div>
+              </div>
+          </header>
 
-    <header>
-        <div id="header">
-            <div>
-                <img src="/images/profile-hex.png">
-            </div>
-            <br>
-            <div>
-                <h2>Your Name</h2>
-            </div>
-        </div>
-    </header>
+          <main>
+              <!-- New Tweet -->
+              <div class="flexbox column">
+                  <section class="new-tweet border-box w-full h-full mb-1">
+                      <form method="POST" action="/tweets">
+                          <textarea
+                              name="text"
+                              id="tweet-text"
+                              class="scroll-box border-box w-full"
+                              placeholder="What are you chirping about?"
+                              required
+                              autofocus
+                          ></textarea>
 
-    <!-- Page-specific (main) content here -->
-    <main>
-        <section class="new-tweet">
-            <form method="POST" action="/tweets">
-                <textarea
-                    name="text"
-                    id="tweet-text"
-                    class="message-box"
-                    placeholder="What are you chirping about?"
-                    required
-                    autofocus
-                ></textarea>
+                          <hr class="hr-line mb-1">
 
-                <hr class="my-4">
+                          <footer class="flexbox space-between">
+                              <button class="btn submit" type="submit">Tweet</button>
+                              <output name="counter" class="counter" for="tweet-text">140</output>
+                            </footer>
+                      </form>
+                  </section>
 
-                <footer class="flex">
-                    <button class="btn submit" type="submit">Tweet</button>
-                    <output name="counter" class="counter" for="tweet-text">140</output>
-                </footer>
-            </form>
-        </section>
-    </main>
+                  <article>
+                      <div class="tweet">
+                          <header>
+                              <div class="flexbox space-between">
+                                  <div class="flexbox">
+                                    <img src="http://placekitten.com/75/75" alt="profile picture">
+                                    <h5>John</h5>
+                                  </div>
+                                  <h5>@John</h5>
+                              </div>
+                              <p>Hello World!</p>
+                          </header>
+
+                          <hr class="hr-line mb-1">
+
+                          <footer class="flexbox space-between">
+                              <p class="text-xs">10 days ago...</p>
+                              <button>Like</button>
+                          </footer>
+                      </div>
+                  </article>
+              </div>
+          </main>
+
+      </div>
 
     <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="scripts/scroll-height.js"></script>

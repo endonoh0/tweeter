@@ -3,6 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
@@ -17,19 +18,93 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Source Sans Pro";
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-content: center; */
 }
 
 main {
-  background-color: #f4f1ec;
-  /* border: 5px solid red; */
-  width: 90%;
-  margin: 10px auto;
-  display: flex;
-  flex-direction: column;
+    width: 90%;
+    margin: 10px auto;
+    background-color: #f4f1ec;
+    border: 5px solid red;
+}
+
+#wrapper {
+    width: 1000px;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+    background: #f7f7f7;
 }
 
 /*
-* Additional CSS can be defined below or in other CSS files, as per instructions
-*/
+ * Flexbox
+ */
+
+.flexbox {
+    display: flex;
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.center {
+    justify-content: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+/*
+ * Box Sizing
+ */
+
+.border-box {
+    box-sizing: border-box;
+}
+
+/*
+ * Width
+ */
+
+ .w-full {
+     width: 100%;
+ }
+
+ /*
+ * Height
+ */
+
+.h-full {
+    height: 100%;
+}
+
+ /*
+ * Background
+ */
+
+.bg-main {
+    background-color: #cf6100;
+}
+
+ /*
+ * Font
+ */
+
+ .text-xs {
+    font-size: small;
+}
+
+ /*
+ * Margin
+ */
+
+ .mb-1 {
+     margin-bottom: 1em;
+ }

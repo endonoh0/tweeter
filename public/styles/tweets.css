@@ -1,0 +1,22 @@
+.tweet {
+    width: 745px;
+    padding: 0.5em 1.5em;
+    border: solid 2px black;
+    margin-bottom: 2em;
+    margin-top: 0.5em;
+}
+
+.tweet h5 {
+    margin-top: 1em;
+}
+
+.tweet img {
+    border-radius: 2.5em;
+    margin-right: 0.5em;
+}
+
+.tweet p {
+    height: 42px;
+    padding: 5px;
+    margin: 0;
+}
