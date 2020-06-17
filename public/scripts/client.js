@@ -1,27 +1,30 @@
 const createTweetElement = function (tweet) {
     return $(`
         <article>
-            <header>
-                <div class="flexbox space-between">
-                    <div class="flexbox">
-                        <img src="${tweet.user.avatars}" alt="profile picture">
-                        <h5>${tweet.user.name}</h5>
-                    </div>
+            <div class="tweet">
+                <header>
+                    <div class="flexbox space-between">
+                        <div class="flexbox">
+                            <img src="${tweet.user.avatars}" alt="profile picture">
+                            <h5>${tweet.user.name}</h5>
+                        </div>
                         <h4>${tweet.user.handle}</h4>
                     </div>
                     <p>${tweet.content.text}</p>
-            <header>
+                </header>
 
-            <hr class="hr-line mb-1">
-
-            <footer class="flexbox space-between">
-                <p class="text-xs">${tweet.created_at}</p>
+                <hr class="hr-line mb-1">
                 <div>
-                    <button class=""><i class="fa fa-flag"></i></button>
-                    <button class=""><i class="fa fa-retweet"></i></button>
-                    <button class=""><i class="fa fa-heart"></i></button>
-                </div
-            <footer>
+                    <footer class="flexbox space-between">
+                        <p class="text-xs">${tweet.created_at}...</p>
+                        <div>
+                            <button class=""><i class="fa fa-flag"></i></button>
+                            <button class=""><i class="fa fa-retweet"></i></button>
+                            <button class=""><i class="fa fa-heart"></i></button>
+                        </div
+                    <footer>
+                </div>
+            <div>
         <article>`
         );
 }
