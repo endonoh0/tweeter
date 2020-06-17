@@ -7,6 +7,7 @@
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -54,7 +55,6 @@
                               id="tweet-text"
                               class="scroll-box border-box w-full"
                               placeholder="What are you chirping about?"
-                              required
                               autofocus
                           ></textarea>
 
@@ -62,6 +62,7 @@
 
                           <footer class="flexbox space-between">
                               <button class="btn submit" type="submit">Tweet</button>
+                              <div class="error-text"></div>
                               <output name="counter" class="counter" for="tweet-text">140</output>
                           </footer>
                       </form>

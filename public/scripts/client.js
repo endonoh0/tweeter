@@ -1,4 +1,4 @@
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
     return $(`
         <article>
             <div class="tweet">
@@ -10,7 +10,9 @@ const createTweetElement = function (tweet) {
                         </div>
                         <h4>${tweet.user.handle}</h4>
                     </div>
-                    <p>${tweet.content.text}</p>
+                    <div class="scroll-box no-wrap">
+                        <p>${tweet.content.text}</p>
+                    </div>
                 </header>
 
                 <hr class="hr-line mb-1">
@@ -26,42 +28,66 @@ const createTweetElement = function (tweet) {
                 </div>
             <div>
         <article>`
-        );
+    );
 }
 
-$(document).ready(function (event) {
-
-    $("form").submit(function (event) {
-        event.preventDefault();
-
-        $.ajax({
-            url: $(this).attr("action"),
-            method: "POST",
-            data: $(this).serialize(),
-        }).done(function () {;
-            console.log("Success");
-            loadTweets();
-
-        }).fail(function () {
-            alert("Fail");
-        });
+$(document).ready(function() {
+    $("form").validate({
+        rules: {
+            text: {
+                required: true,
+                maxlength: 140
+            }
+        },
+        messages: {
+            text: {
+                required: "Please fill in the text field",
+                maxlength: "Text must be less than or equal to 140 characters."
+            }
+        },
+        errorElement: 'div',
+        errorLabelContainer: '.error-text'
     });
-    loadTweets();
+
+    $("form").submit(function(event) {
+        const isValid = $("form").valid();
+
+        if (!isValid) {
+            event.preventDefault();
+            alert("Not submitted");
+        } else {
+            event.preventDefault();
+            $.ajax({
+                url: $(this).attr("action"),
+                method: "POST",
+                data: $(this).serialize(),
+            }).done(function(data) {
+                console.log("Success");
+                $('form')[0].reset();
+                $('.counter').val(140);
+                loadTweets(data);
+            });
+        }
+
+        loadTweets();
+    });
 })
 
-const renderTweets = function (tweets) {
+
+const renderTweets = function(tweets) {
     const $container = $('#tweets-container').empty();
 
-    tweets.forEach(function (tweet) {
+    tweets.forEach(function(tweet) {
         $container.append(createTweetElement(tweet));
     });
 }
 
-const loadTweets = function () {
+const loadTweets = function() {
     $.ajax("http://localhost:8080/tweets", { method: 'GET' })
-        .done(function (data) {
+        .done(function(data) {
             renderTweets(data);
         });
 }
 
-renderTweets(createTweetElement());
+
+loadTweets()

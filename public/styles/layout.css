@@ -37,6 +37,7 @@ main {
     background: #f7f7f7;
 }
 
+
 /*
  * Flexbox
  */
@@ -112,4 +113,17 @@ main {
 
 button {
     margin-bottom: 13px;
+}
+
+/*
+* Error Message
+*/
+
+.error-text{
+    color: red;
+    padding-bottom: 17px;
+}
+
+.nowrap {
+    white-space: nowrap;
 }

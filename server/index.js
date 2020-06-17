@@ -10,7 +10,7 @@ const morgan        = require('morgan');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public/")); // access to public folder
+app.use(express.static("public/")); // access to public folder --> looks for static files (html css)
 app.use(morgan('dev'));
 
 // The in-memory database of tweets. It's a basic object with an array in it.
