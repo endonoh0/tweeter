@@ -78,7 +78,7 @@ const renderTweets = function(tweets) {
     const $container = $('#tweets-container').empty();
 
     tweets.forEach(function(tweet) {
-        $container.append(createTweetElement(tweet));
+        $container.prepend(createTweetElement(tweet));
     });
 }
 
