@@ -6,8 +6,8 @@
     <title>Tweeter</title>
 
     <!-- Scripts -->
-    <script type="text/javascript" src="scripts/client.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/client.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
@@ -63,7 +63,7 @@
                           <footer class="flexbox space-between">
                               <button class="btn submit" type="submit">Tweet</button>
                               <output name="counter" class="counter" for="tweet-text">140</output>
-                            </footer>
+                          </footer>
                       </form>
                   </section>
                   <!-- Tweets -->
@@ -84,7 +84,11 @@
 
                           <footer class="flexbox space-between">
                               <p class="text-xs">10 days ago...</p>
-                              <button class=""><i class="fa fa-heart"></i></button>
+                              <div>
+                                  <button class=""><i class="fa fa-flag"></i></button>
+                                  <button class=""><i class="fa fa-retweet"></i></button>
+                                  <button class=""><i class="fa fa-heart"></i></button>
+                              </div>
                           </footer>
                       </div>
                   </article>
@@ -109,6 +113,9 @@
                             </footer>
                         </div>
                     </article>
+                    <div id="tweets-container">
+
+                    </div>
               </div>
           </main>
 
