@@ -117,6 +117,34 @@ main {
 
 button {
     margin-bottom: 13px;
+    border-radius: 2.5em;
+    outline: none;
+}
+
+
+#scrollUp {
+  position: fixed;
+  bottom: 2px;
+  right: 340px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 2.5em;
+}
+
+.display-off {
+    display: none;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+#scrollUp:hover {
+    background-color: #cf6100;
 }
 
 /*
