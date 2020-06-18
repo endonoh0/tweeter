@@ -1,8 +1,6 @@
-/*
-* Validate the post request, fetch the tweet
-*/
 $(document).ready(function () {
 
+    // validate the post request
     $("form").validate({
         rules: {
             text: {
@@ -20,27 +18,46 @@ $(document).ready(function () {
         errorLabelContainer: '.error-text'
     });
 
+    // Fetch tweets on submission
     $("form").submit(function (e) {
         const is_Valid = $("form").valid();
 
         if (!is_Valid) {
             e.preventDefault();
-        } else {
-            e.preventDefault();
-            $.ajax({
-                url: $(this).attr("action"),
-                method: "POST",
-                data: $(this).serialize(),
-            }).done(function (data) {
-                $('form')[0].reset();
-                $('.counter').val(140);
-                load_Tweets(data);
-            });
         }
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr("action"),
+            method: "POST",
+            data: $(this).serialize(),
+        }).done(function (data) {
+            $('form')[0].reset();
+            $('.counter').val(140);
+            load_Tweets(data);
+        });
+
         load_Tweets();
     });
 });
 
+// Fetch the tweet data
+const load_Tweets = function () {
+    $.ajax("http://localhost:8080/tweets", { method: 'GET' })
+        .done(function (data) {
+            render_Tweets(data);
+        });
+}
+
+// Insert the tweet into the DOM
+const render_Tweets = function (tweets) {
+    const $container = $('#tweets-container').empty();
+
+    tweets.forEach(function (tweet) {
+        $container.prepend(create_Tweet_Element(tweet));
+    });
+}
+
+// Insert tweet inputs into html template
 const create_Tweet_Element = function(tweet) {
     // Re-encode the tweet
     const escape = function(str) {
@@ -79,23 +96,6 @@ const create_Tweet_Element = function(tweet) {
             <div>
         <article>`
     );
-}
-
-
-
-const render_Tweets = function(tweets) {
-    const $container = $('#tweets-container').empty();
-
-    tweets.forEach(function(tweet) {
-        $container.prepend(create_Tweet_Element(tweet));
-    });
-}
-
-const load_Tweets = function() {
-    $.ajax("http://localhost:8080/tweets", { method: 'GET' })
-        .done(function(data) {
-            render_Tweets(data);
-        });
 }
 
 load_Tweets()
