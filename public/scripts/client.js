@@ -1,29 +1,35 @@
 const createTweetElement = function(tweet) {
+    const escape = function (str) {
+        let div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    }
+
     return $(`
         <article>
             <div class="tweet">
                 <header>
                     <div class="flexbox space-between">
                         <div class="flexbox">
-                            <img src="${tweet.user.avatars}" alt="profile picture">
-                            <h5>${tweet.user.name}</h5>
+                            <img src="${escape(tweet.user.avatars)}" alt="profile picture">
+                            <h5>${escape(tweet.user.name)}</h5>
                         </div>
-                        <h4>${tweet.user.handle}</h4>
+                        <h4>${escape(tweet.user.handle)}</h4>
                     </div>
                     <div class="scroll-box no-wrap">
-                        <p>${tweet.content.text}</p>
+                        <p>${escape(tweet.content.text)}</p>
                     </div>
                 </header>
 
                 <hr class="hr-line mb-1">
                 <div>
                     <footer class="flexbox space-between">
-                        <p class="text-xs">${tweet.created_at}...</p>
+                        <p class="text-xs">${escape(tweet.created_at)}...</p>
                         <div>
                             <button class=""><i class="fa fa-flag"></i></button>
                             <button class=""><i class="fa fa-retweet"></i></button>
                             <button class=""><i class="fa fa-heart"></i></button>
-                        </div
+                         </div
                     <footer>
                 </div>
             <div>
@@ -54,7 +60,6 @@ $(document).ready(function() {
 
         if (!isValid) {
             event.preventDefault();
-            alert("Not submitted");
         } else {
             event.preventDefault();
             $.ajax({
@@ -62,16 +67,15 @@ $(document).ready(function() {
                 method: "POST",
                 data: $(this).serialize(),
             }).done(function(data) {
-                console.log("Success");
                 $('form')[0].reset();
                 $('.counter').val(140);
+
                 loadTweets(data);
             });
         }
-
         loadTweets();
     });
-})
+});
 
 
 const renderTweets = function(tweets) {
@@ -88,6 +92,5 @@ const loadTweets = function() {
             renderTweets(data);
         });
 }
-
 
 loadTweets()

@@ -14,3 +14,25 @@
     font-weight: 400px;
     padding: 0 0 1em 1em;
 }
+
+#compose {
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.fa-angle-double-down {
+    margin-top: 1em;
+}
+
+.arrowSliding {
+    position: absolute;
+    animation: slide 2s linear infinite;
+}
+
+@keyframes slide {
+    0% { opacity:0; transform: translateY(0px); }
+   25% { opacity:1; transform: translateY(5px); }
+   75% { opacity:1; transform: translateY(10px); }
+  100% { opacity:0; transform: translateY(15px); }
+}

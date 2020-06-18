@@ -30,8 +30,12 @@
                   <span class="brand">Tweeter</span>
                   <img src="/images/logo.svg" alt="logo">
               </div>
-
-            <button>New tweet</button>
+              <div class="flexbox column">
+                <button id="compose" class="bg-main m-0" type="button">Write a new tweet</button>
+                <div class="arrowSliding">
+                    <i class="fa fa-angle-double-down fa-lg"></i>
+                </div>
+              </div>
           </nav>
           <!-- Profile -->
           <header>
@@ -55,7 +59,7 @@
                               id="tweet-text"
                               class="scroll-box border-box w-full"
                               placeholder="What are you chirping about?"
-                              autofocus
+                              required
                           ></textarea>
 
                           <hr class="hr-line mb-1">
@@ -77,5 +81,6 @@
 
     <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="scripts/scroll-height.js"></script>
+    <script type="text/javascript" src="scripts/form-slide.js"></script>
   </body>
 </html>
