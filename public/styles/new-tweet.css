@@ -16,10 +16,11 @@
 
 .new-tweet {
     width: 745px;
+    margin-top: 40px;
     padding: 2em 1.5em;
     border-radius: 0.5em;
     display: none;
-    border: solid 1px #63b3ed;
+    /* border: solid 1px #63b3ed; */
 }
 
 .hr-line {
@@ -29,18 +30,20 @@
 
 .btn {
     padding: 0 10px 0 10px;
-    color: #fff;
-    background-color: #545149;
+    color: black;
+    font-weight: 600;
+    font-size: medium;
+    /* background-color: #545149; */
     border-radius: 0.5em;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .submit {
-    background-color: #4299e1;
+    /* background-color: #4299e1; */
 }
 
 .submit:hover {
-    background-color: #3182ce;
+    background-color: #c9dbd9
 }
 
 .counter.error {

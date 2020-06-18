@@ -6,24 +6,27 @@
     padding: 1.5em;
     color: #FFFFFF;
     font-family: "Bungie";
-    border: 5px solid yellow;
+    /* border: 5px solid yellow; */
 }
 
 .brand {
     font-size: 2em;
-    font-weight: 400px;
+    font-weight: 700;
     padding: 0 0 1em 1em;
 }
 
 #compose {
     color: white;
+    font-size: 1em;
+    font-weight: 700;
     border: none;
     cursor: pointer;
-    padding: 0.5em;
+    padding: 1em;
+    /* z-index: 1; */
 }
 
 .fa-angle-double-down {
-    margin-top: 1em;
+    margin-top: 1.5em;
 }
 
 .arrowSliding {

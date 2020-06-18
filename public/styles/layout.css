@@ -1,7 +1,5 @@
 /*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
+ * Global layout stuff
  */
 
 html {
@@ -10,10 +8,6 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
 
 body {
   color: #545149;
@@ -26,7 +20,7 @@ main {
     width: 90%;
     margin: 10px auto;
     background-color: #f4f1ec;
-    border: 5px solid red;
+    /* border: 5px solid red; */
 }
 
 #wrapper {
@@ -34,7 +28,9 @@ main {
     position: absolute;
     left: 50%;
     margin-left: -500px;
-    background: #f7f7f7;
+    /* background: #f7f7f7; */
+    /* background: #cbdbc9; */
+    background: #dbc9cb;
 }
 
 
@@ -88,7 +84,12 @@ main {
  */
 
 .bg-main {
-    background-color: #cf6100;
+    /* background-color: #cf7029; */
+    /* background-color: #FFCBCB; */
+    /* background-color: #fb9fa4 */
+    /* background-color: #f27d0c */
+    /* background-color: 		#f7a583 */
+    background-color: #c9cbdb;
 }
 
  /*
@@ -121,6 +122,17 @@ button {
     outline: none;
 }
 
+button:not(:last-child) {
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #c9dbd9;
+}
+
+h5:hover {
+    background-color: #c9dbd9;
+}
 
 #scrollUp {
   position: fixed;
@@ -143,9 +155,7 @@ button {
     cursor: pointer;
 }
 
-#scrollUp:hover {
-    background-color: #cf6100;
-}
+
 
 /*
 * Error Message
@@ -158,4 +168,10 @@ button {
 
 .nowrap {
     white-space: nowrap;
+}
+
+@media (max-width: 1000px) {
+    body {
+        width: 100%;
+    }
 }

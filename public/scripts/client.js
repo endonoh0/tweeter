@@ -77,7 +77,7 @@ const create_Tweet_Element = function(tweet) {
                         <h4>${escape(tweet.user.handle)}</h4>
                     </div>
                     <div class="scroll-box no-wrap">
-                        <p>${escape(tweet.content.text)}</p>
+                        <p class="mt-25">${escape(tweet.content.text)}</p>
                     </div>
                 </header>
 
@@ -85,7 +85,7 @@ const create_Tweet_Element = function(tweet) {
 
                 <div>
                     <footer class="flexbox space-between">
-                        <p class="text-xs">${escape(tweet.created_at)}...</p>
+                        <p class="text-xs m-0">10 days ago...</p>
                         <div>
                             <button class=""><i class="fa fa-flag"></i></button>
                             <button class=""><i class="fa fa-retweet"></i></button>
