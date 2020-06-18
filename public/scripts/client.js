@@ -1,10 +1,53 @@
-const createTweetElement = function(tweet) {
-    const escape = function (str) {
+/*
+* Validate the post request, fetch the tweet
+*/
+$(document).ready(function () {
+
+    $("form").validate({
+        rules: {
+            text: {
+                required: true,
+                maxlength: 140
+            }
+        },
+        messages: {
+            text: {
+                required: "You can't tweet that! 🐦",
+                maxlength: "Oh my, aren't you a chirpy one."
+            }
+        },
+        errorElement: 'div',
+        errorLabelContainer: '.error-text'
+    });
+
+    $("form").submit(function (e) {
+        const is_Valid = $("form").valid();
+
+        if (!is_Valid) {
+            e.preventDefault();
+        } else {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr("action"),
+                method: "POST",
+                data: $(this).serialize(),
+            }).done(function (data) {
+                $('form')[0].reset();
+                $('.counter').val(140);
+                load_Tweets(data);
+            });
+        }
+        load_Tweets();
+    });
+});
+
+const create_Tweet_Element = function(tweet) {
+    // Re-encode the tweet
+    const escape = function(str) {
         let div = document.createElement('div');
         div.appendChild(document.createTextNode(str));
         return div.innerHTML;
     }
-
     return $(`
         <article>
             <div class="tweet">
@@ -22,6 +65,7 @@ const createTweetElement = function(tweet) {
                 </header>
 
                 <hr class="hr-line mb-1">
+
                 <div>
                     <footer class="flexbox space-between">
                         <p class="text-xs">${escape(tweet.created_at)}...</p>
@@ -37,60 +81,21 @@ const createTweetElement = function(tweet) {
     );
 }
 
-$(document).ready(function() {
-    $("form").validate({
-        rules: {
-            text: {
-                required: true,
-                maxlength: 140
-            }
-        },
-        messages: {
-            text: {
-                required: "Please fill in the text field",
-                maxlength: "Text must be less than or equal to 140 characters."
-            }
-        },
-        errorElement: 'div',
-        errorLabelContainer: '.error-text'
-    });
-
-    $("form").submit(function(event) {
-        const isValid = $("form").valid();
-
-        if (!isValid) {
-            event.preventDefault();
-        } else {
-            event.preventDefault();
-            $.ajax({
-                url: $(this).attr("action"),
-                method: "POST",
-                data: $(this).serialize(),
-            }).done(function(data) {
-                $('form')[0].reset();
-                $('.counter').val(140);
-
-                loadTweets(data);
-            });
-        }
-        loadTweets();
-    });
-});
 
 
-const renderTweets = function(tweets) {
+const render_Tweets = function(tweets) {
     const $container = $('#tweets-container').empty();
 
     tweets.forEach(function(tweet) {
-        $container.prepend(createTweetElement(tweet));
+        $container.prepend(create_Tweet_Element(tweet));
     });
 }
 
-const loadTweets = function() {
+const load_Tweets = function() {
     $.ajax("http://localhost:8080/tweets", { method: 'GET' })
         .done(function(data) {
-            renderTweets(data);
+            render_Tweets(data);
         });
 }
 
-loadTweets()
+load_Tweets()

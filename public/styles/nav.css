@@ -19,6 +19,7 @@
     color: white;
     border: none;
     cursor: pointer;
+    padding: 0.5em;
 }
 
 .fa-angle-double-down {
