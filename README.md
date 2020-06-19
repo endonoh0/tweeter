@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of profile"](docs/tweet-profile.png)
-!["Screenshot of tweet box"](docs/tweet-box.png)
-!["Screenshot of tweets"](docs/tweets.png)
+!["Screenshot of profile"](https://github.com/endonoh0/tweeter/blob/master/docs/tweet-profile.png?raw=true)
+!["Screenshot of tweet box"](https://github.com/endonoh0/tweeter/blob/master/docs/tweet-box.png?raw=true)
+!["Screenshot of tweets"](https://github.com/endonoh0/tweeter/blob/master/docs/tweets.png?raw=true)
 
 ## Getting Started
 
