@@ -12,7 +12,7 @@ This project contained incomplete code which was build upon to practice my front
 
 ## Installation
 
-1. Clone this repository in your machine.
+1. Clone this repository into your machine.
 
 2. Install dependencies using the `npm install` command.
 
