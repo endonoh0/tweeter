@@ -26,6 +26,7 @@ $(document).ready(function () {
             e.preventDefault();
         }
         e.preventDefault();
+
         $.ajax({
             url: $(this).attr("action"),
             method: "POST",
@@ -35,7 +36,6 @@ $(document).ready(function () {
             $('.counter').val(140);
             load_Tweets(data);
         });
-
         load_Tweets();
     });
 });

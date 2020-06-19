@@ -26,13 +26,16 @@
       <div id="scrollUp">
           <button class="display-off m-0" type="button"><i class="fa fa-chevron-circle-up fa-3x"></i></button>
       </div>
+
       <div id="wrapper">
-          <!-- Top nav bar (fixed) -->
+          <!-- Top nav bar -->
           <nav id="nav-bar" class="flexbox space-between bg-main w-full">
+              <!-- Left Side -->
               <div>
                   <span class="brand">Tweeter</span>
                   <img src="/images/logo.svg" alt="logo">
               </div>
+              <!-- Right Side -->
               <div class="flexbox column">
                 <button id="compose" class="bg-main m-0" type="button">Write a new tweet</button>
                 <div class="arrowSliding">
@@ -40,6 +43,7 @@
                 </div>
               </div>
           </nav>
+
           <!-- Profile -->
           <header>
               <div id="header" class="flexbox column center bg-main w-full">
@@ -47,13 +51,13 @@
                       <img class="profile" src="/images/profile-hex.png">
                   </div>
                   <div>
-                      <h2>Jess Texas</h2>
+                      <h2><span class="highlight">Je</span>ssy</h2>
                   </div>
               </div>
           </header>
 
+          <!-- New Tweet -->
           <main>
-              <!-- New Tweet -->
               <div class="flexbox column bg-secondary">
                   <section class="new-tweet border-box w-full h-full">
                       <form method="POST" action="/tweets">
@@ -74,9 +78,9 @@
                           </footer>
                       </form>
                   </section>
-                  <!-- Tweets -->
-                  <div id="tweets-container">
-                  </div>
+
+                  <!-- User Tweets -->
+                  <div id="tweets-container"></div>
               </div>
           </main>
       </div>

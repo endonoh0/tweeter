@@ -8,9 +8,8 @@ const bodyParser    = require("body-parser");
 const app           = express();
 const morgan        = require('morgan');
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public/")); // access to public folder --> looks for static files (html css)
+app.use(express.static("public/"));
 app.use(morgan('dev'));
 
 // The in-memory database of tweets. It's a basic object with an array in it.
@@ -18,8 +17,7 @@ const db = require("./lib/in-memory-db");
 
 const DataHelpers = require("./lib/data-helpers.js")(db);
 
-
-//  define routes that use DataHelpers to interact with the data layer.
+//  defined routes that use DataHelpers to interact with the data layer.
 const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
 // Mount the tweets routes at the "/tweets" path prefix:

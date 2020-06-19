@@ -1,10 +1,26 @@
+/****************************************************************************
+                                    Container
+*****************************************************************************/
+
+.new-tweet {
+    width: 745px;
+    margin-top: 40px;
+    padding: 2em 1.5em;
+    border-radius: 0.5em;
+    display: none;
+}
+
+/****************************************************************************
+                                    Textarea
+*****************************************************************************/
+
 #tweet-text {
     height: 30px;
     outline: none;
     font-size: 24px;
-    color: black;
     border: none;
     background: transparent;
+    color: black;
 }
 
 .scroll-box {
@@ -14,32 +30,17 @@
     overflow-y: scroll;
 }
 
-.new-tweet {
-    width: 745px;
-    margin-top: 40px;
-    padding: 2em 1.5em;
-    border-radius: 0.5em;
-    display: none;
-    /* border: solid 1px #63b3ed; */
-}
-
-.hr-line {
-    margin-top: 0em;
-    border-bottom: solid 1px black;
-}
+/****************************************************************************
+                        Button, Error Text, and Horizontal Line
+*****************************************************************************/
 
 .btn {
     padding: 0 10px 0 10px;
     color: black;
     font-weight: 600;
     font-size: medium;
-    /* background-color: #545149; */
     border-radius: 0.5em;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.submit {
-    /* background-color: #4299e1; */
 }
 
 .submit:hover {
@@ -50,4 +51,13 @@
     font-weight: bold;
     font-size: x-large;
     color: red;
+}
+ .error-text{
+    color: red;
+    padding-bottom: 17px;
+}
+
+.hr-line {
+    margin-top: 0em;
+    border-bottom: solid 1px black;
 }
