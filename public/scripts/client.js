@@ -22,10 +22,8 @@ $(document).ready(function () {
     $("form").submit(function (e) {
         const is_Valid = $("form").valid();
 
-        if (!is_Valid) {
-            e.preventDefault();
-        }
         e.preventDefault();
+        if (!is_Valid) return;
 
         $.ajax({
             url: $(this).attr("action"),
@@ -87,9 +85,9 @@ const create_Tweet_Element = function(tweet) {
                     <footer class="flexbox space-between">
                         <p class="text-xs m-0">10 days ago...</p>
                         <div>
-                            <button class=""><i class="fa fa-flag"></i></button>
-                            <button class=""><i class="fa fa-retweet"></i></button>
-                            <button class=""><i class="fa fa-heart"></i></button>
+                            <button <i class="fa fa-flag"></i></button>
+                            <button <i class="fa fa-retweet"></i></button>
+                            <button <i class="fa fa-heart"></i></button>
                          </div
                     <footer>
                 </div>
