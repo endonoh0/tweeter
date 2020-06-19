@@ -24,6 +24,7 @@ This project contained incomplete code which was build upon to practice my front
 
 - Express
 - Node 5.10.x or above
+- jquery-validation
 - chance
 - body-parser
 - md5
