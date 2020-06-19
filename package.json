@@ -4,7 +4,6 @@
   "description": "A twitter clone by Lighthouse Labs for web bootcamp students to learn front-end dev skillz",
   "main": "server/index.js",
   "scripts": {
-    "test": "mocha",
     "start": "node server/index.js",
     "watch": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
   },

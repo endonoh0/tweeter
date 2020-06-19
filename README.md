@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+This project contained incomplete code which was build upon to practice my front-end skills, and back-end skills.
 
 ## Screenshots
 
@@ -10,12 +10,15 @@ This repository is the starter code for the project: Students will fork and clon
 !["Screenshot of tweet box"](https://github.com/endonoh0/tweeter/blob/master/docs/tweet-box.png?raw=true)
 !["Screenshot of tweets"](https://github.com/endonoh0/tweeter/blob/master/docs/tweets.png?raw=true)
 
-## Getting Started
+## Installation
 
-1. Fork this repository, then clone your fork of this repository.
+1. Clone this repository in your machine.
+
 2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+
+3. Start the web server using the `npm run start` command. The app will be served at <http://localhost:8080/>.
+
+4. Go to <http://localhost:8080/> in your browser and start tweeting!
 
 ## Dependencies
 
