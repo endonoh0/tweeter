@@ -6,8 +6,13 @@ This project contained incomplete code which was build upon to practice my front
 
 ## Screenshots
 
+### Profile View
 !["Screenshot of profile"](https://github.com/endonoh0/tweeter/blob/master/docs/tweet-profile.png?raw=true)
+
+### Tweet Box
 !["Screenshot of tweet box"](https://github.com/endonoh0/tweeter/blob/master/docs/tweet-box.png?raw=true)
+
+### Recent Tweets
 !["Screenshot of tweets"](https://github.com/endonoh0/tweeter/blob/master/docs/tweets.png?raw=true)
 
 ## Installation
